@@ -1,0 +1,17 @@
+# Dependencias de Node
+node_modules/
+npm-debug.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Datos de Bases de Datos (Docker Volumes)
+# ¡No queremos subir los datos de prueba reales, solo los scripts!
+postgres-data/
+mongo-data/
+redis-data/
+neo4j-data/
+
+# Variables de entorno (Opcional, si usaras un .env)
+.env

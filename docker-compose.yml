@@ -1,0 +1,59 @@
+
+services:
+  # --- 1. Base de Datos Relacional (ACID) ---
+  postgres-db:
+    image: postgres:15-alpine # Imagen ligera de PostgreSQL
+    container_name: pharmaflow_postgres
+    environment:
+      POSTGRES_USER: admin_pharma
+      POSTGRES_PASSWORD: admin_password123
+      POSTGRES_DB: pharmaflow_db
+    ports:
+      - "5432:5432" # Expone el puerto de Postgres a tu máquina local
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data # Guarda los datos de la BD en tu máquina
+      - ./db_scripts/init.sql:/docker-entrypoint-initdb.d/init.sql # Opcional: Carga un script inicial
+    restart: unless-stopped
+
+  # --- 2. Base de Datos de Documentos (Flexible) ---
+  mongo-db:
+    image: mongo:latest # Imagen oficial de MongoDB
+    container_name: pharmaflow_mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin_mongo
+      MONGO_INITDB_ROOT_PASSWORD: admin_password123
+    ports:
+      - "27017:27017" # Puerto estándar de MongoDB
+    volumes:
+      - ./mongo-data:/data/db # Persistencia de datos de Mongo
+    restart: unless-stopped
+
+  # --- 3. Base de Datos Clave-Valor (Rápida) ---
+  redis-db:
+    image: redis:7-alpine # Imagen ligera de Redis
+    container_name: pharmaflow_redis
+    ports:
+      - "6379:6379" # Puerto estándar de Redis
+    volumes:
+      - ./redis-data:/data # Persistencia de datos de Redis
+    restart: unless-stopped
+
+  # --- 4. Base de Datos de Grafos (Relaciones) ---
+  neo4j-db:
+    image: neo4j:5 # Imagen oficial de Neo4j
+    container_name: pharmaflow_neo4j
+    environment:
+      NEO4J_AUTH: neo4j/admin_password123 # Usuario 'neo4j', contraseña 'admin_password123'
+    ports:
+      - "7474:7474" # Interfaz web de Neo4j
+      - "7687:7687" # Puerto Bolt (para el driver de Node.js)
+    volumes:
+      - ./neo4j-data/data:/data
+      - ./neo4j-data/logs:/logs
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  mongo-data:
+  redis-data:
+  neo4j-data:
