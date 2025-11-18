@@ -66,3 +66,13 @@ Para probar el bloqueo pesimista:
 | **MongoDB** | 27017 | `admin_mongo` | `admin_password123` | `pharmaflow_mongo_db` |
 | **Redis** | 6379 | - | - | - |
 | **Neo4j** | 7474 | `neo4j` | `admin_password123` | - |
+
+## 👤 Autor
+
+**[Paolo Alessandro Dueñas Martínez]**
+* **GitHub:** [Paolo Duenas](https://github.com/PaoloDuenas)
+* **LinkedIn:** [paoloduenas](https://linkedin.com/in/paoloduenas)
+
+---
+Copyright © 2025 [Paolo Dueñas].
+Este proyecto fue desarrollado como parte de la materia [Bases de datos Avanzadas] en [Anahuac Mayab].
