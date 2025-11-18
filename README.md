@@ -69,7 +69,7 @@ Para probar el bloqueo pesimista:
 
 ## 👤 Autor
 
-**[Paolo Alessandro Dueñas Martínez]**
+**Paolo Alessandro Dueñas Martínez**
 * **GitHub:** [Paolo Duenas](https://github.com/PaoloDuenas)
 * **LinkedIn:** [paoloduenas](https://linkedin.com/in/paoloduenas)
 
