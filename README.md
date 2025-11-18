@@ -74,5 +74,5 @@ Para probar el bloqueo pesimista:
 * **LinkedIn:** [paoloduenas](https://linkedin.com/in/paoloduenas)
 
 ---
-Copyright © 2025 Paolo Alessandro Dueñas Mertínez.
+Copyright © 2025 Paolo Alessandro Dueñas Martínez.
 Este proyecto fue desarrollado como parte de la materia Bases de datos Avanzadas en Anahuac Mayab.
